@@ -1,0 +1,120 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #d1f5be;
+  display: flex;
+  justify-content: center;
+}
+
+article {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* ↑ Définit une grille avec 3 colonnes de taille égale (1fr signifie "une fraction de l'espace disponible").*/
+  gap: 10px;
+  /* ↑ Espacement entre les card*/
+}
+
+h1 {
+  /*outline: 2px solid red;*/
+  text-align: center;
+  font-family: "Walter Turncoat", cursive;
+  font-weight: 500;
+  font-size: 50px;
+  margin-bottom: 40px;
+  margin-top: 20px;
+  color: rgba(0, 0, 0, 0.841);
+  text-shadow: #254d32 0px 0px 10px;
+}
+
+.Container {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 100px;
+}
+
+.Initiales,
+.Nom {
+  position: absolute;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 110%;
+  letter-spacing: 0.5px;
+  width: 300px;
+  height: 100px;
+  text-align: center;
+  padding-top: 10%;
+  border-radius: 5px;
+  transition-property: all;
+  transition-delay: 0s;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+}
+
+.Initiales {
+  background-color: #254d32;
+  color: whitesmoke;
+}
+
+.Nom {
+  color: #254d32;
+  opacity: 0;
+}
+
+.Initiales:hover {
+  /*opacity: 0;*/
+  display: none;
+}
+
+.Nom:hover {
+  opacity: 1;
+  scale: 1.05;
+  background-color: whitesmoke;
+  font-size: 140%;
+  border: 1px solid #254d32;
+}
+
+span {
+  animation-name: my-anim;
+} /*Faire débarquer la dernière cellule <span> de la gauche*/
+
+
+
+/*tablette*/
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  h1 {
+    margin-bottom: 20px;
+  }
+
+  article {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .Container {
+    margin: 5px;
+  }
+}
+
+/*Téléphone*/
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  h1 {
+    margin-bottom: 20px;
+  }
+
+  article {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .Container {
+    margin: 5px;
+  }
+}
