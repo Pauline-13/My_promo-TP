@@ -5,29 +5,65 @@
 }
 
 body {
-  background-color: #d1f5be;
+  background-color: #a6b69f;
   display: flex;
   justify-content: center;
+  animation-name: my-anim;
+  animation-delay: 0s;
+  animation-duration: 4s;
 }
 
-article {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  /* ↑ Définit une grille avec 3 colonnes de taille égale (1fr signifie "une fraction de l'espace disponible").*/
-  gap: 10px;
-  /* ↑ Espacement entre les card*/
+@keyframes my-anim {
+  from {
+    background-color: #254d32;
+  }
+  to {
+    background-color: #a6b69f;
+  }
+}
+
+section {
+  /*border: 1px solid yellow;*/
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 h1 {
   /*outline: 2px solid red;*/
-  text-align: center;
+  display: flex;
+  justify-content: center;
   font-family: "Walter Turncoat", cursive;
   font-weight: 500;
-  font-size: 50px;
+  font-size: 70px;
   margin-bottom: 40px;
   margin-top: 20px;
   color: rgba(0, 0, 0, 0.841);
   text-shadow: #254d32 0px 0px 10px;
+  animation-name: title;
+  animation-duration: 5s;
+  animation-delay: 0s;
+}
+
+@keyframes title {
+  from {
+    color: #a6b69f;
+  }
+  to {
+    color: rgba(0, 0, 0, 0.841);
+  }
+}
+
+#apprenants {
+  /*outline: 1px solid blue;*/
+  width: 60%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* ↑ Définit une grille avec 3 colonnes de taille égale (1fr signifie "une fraction de l'espace disponible").*/
+  justify-items: center;
+  gap: 20px;
+  /* ↑ Espacement entre les card*/
 }
 
 .Container {
@@ -79,42 +115,123 @@ h1 {
   border: 1px solid #254d32;
 }
 
-span {
-  animation-name: my-anim;
-} /*Faire débarquer la dernière cellule <span> de la gauche*/
+div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+  height: 2px;
+  width: 50%;
+  border:#a6b69f solid 1px;
+  box-shadow: #6f726d 0px 0px 8px;
+}
 
+h2 {
+  /*outline: 2px solid red;*/
+  text-align: center;
+  width: 100%;
+  font-family: "Walter Turncoat", cursive;
+  font-weight: 500;
+  font-size: 50px;
+  margin-bottom: 40px;
+  margin-top: 100px;
+  color: rgba(0, 0, 0, 0.841);
+  text-shadow: #254d32 0px 0px 10px;
+  animation-name: title;
+  animation-duration: 5s;
+  animation-delay: 0s;
+}
 
+#formateurs {
+  /*outline: 1px solid green;*/
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  gap: 100px;
+  padding-bottom: 100px;
+}
+
+footer {
+  background-color: #254d32;
+  height: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Walter Turncoat", cursive;
+  font-weight: 500;
+  font-size: 20px;
+  color: #a6b69f;
+}
 
 /*tablette*/
 @media only screen and (min-width: 481px) and (max-width: 768px) {
   h1 {
     margin-bottom: 20px;
+    align-items: center;
+    width: 100%;
+    font-size: 60px;
   }
 
-  article {
+  section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+
+  #apprenants {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    width: 100%;
   }
 
-  .Container {
-    margin: 5px;
+  h2 {
+    justify-content: center;
+    width: 100%;
   }
+
+  #formateurs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    gap: 20px;
+  }
+
+  footer {
+    width: 100%;
+  }
+
+  /*.Container {
+    margin: 5px;
+  }*/
 }
 
 /*Téléphone*/
 @media only screen and (min-width: 320px) and (max-width: 480px) {
   h1 {
     margin-bottom: 20px;
+    width: 100%;
+    text-align: center;
+    font-size: 40px;
   }
 
-  article {
+  #apprenants {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    width: 100%;
   }
 
-  .Container {
-    margin: 5px;
+  #formateurs {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
   }
+
+  /*.Container {
+    margin: 5px;
+  }*/
 }
